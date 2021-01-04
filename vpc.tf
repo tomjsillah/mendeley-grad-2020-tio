@@ -3,5 +3,4 @@ resource "aws_vpc" "grad20" {
   tags = {
     Name = "grad20"
   }
-#lifecycle {}
 }
