@@ -1,7 +1,7 @@
 resource "aws_security_group" "eks_cluster_sg" {
   name        = "cluster_sg"
   description = "Cluster communication with worker nodes"
-  vpc_id      = aws_vpc.grad20.id
+  vpc_id      = aws_vpc.Re-cares.id
 
   tags = merge(
     {
@@ -34,7 +34,7 @@ resource "aws_security_group_rule" "eks_cluster_ingress_node_https" {
 resource "aws_security_group" "eks_worker_node_sg" {
   name        = "worker_node_sg"
   description = "Security group for all nodes in the cluster"
-  vpc_id      = aws_vpc.grad20.id
+  vpc_id      = aws_vpc.Re-cares.id
 
   tags = merge(
     {

@@ -116,10 +116,10 @@ resource "aws_iam_role_policy_attachment" "eks_worker_node_AmazonEC2ContainerReg
   role       = aws_iam_role.eks_worker_node_role.name
 }
 
-resource "aws_iam_instance_profile" "eks_worker_node_profile" {
-  name = "eks_cluster.eks_worker_node_profile"
-  role = aws_iam_role.eks_worker_node_role.name
-}
+# resource "aws_iam_instance_profile" "eks_worker_node_profile" {
+#   name = "eks_cluster.eks_worker_node_profile"
+#   role = aws_iam_role.eks_worker_node_role.name
+# }
 
 
 

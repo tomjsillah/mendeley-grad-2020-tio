@@ -1,6 +1,6 @@
-resource "aws_vpc" "grad20" {
+resource "aws_vpc" "Re-cares" {
   cidr_block = "192.168.0.0/16"
   tags = {
-    Name = "grad20"
+    Name = "Re-cares"
   }
 }

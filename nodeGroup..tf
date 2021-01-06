@@ -3,7 +3,7 @@ resource "aws_eks_node_group" "nodegroup_a" {
   node_group_name = "nodegroup_a"
   instance_types  = ["t2.micro"]
   ami_type        = "AL2_x86_64_GPU"
-  disk_size       = "12"
+  disk_size       = "20"
   node_role_arn   = aws_iam_role.eks_worker_node_role.arn
   subnet_ids      = [aws_subnet.grad-private-1.id]
 
@@ -14,7 +14,7 @@ resource "aws_eks_node_group" "nodegroup_a" {
   }
 
   remote_access {
-    ec2_ssh_key               = "key_name"
+    ec2_ssh_key               = "re-cares"
     source_security_group_ids = [aws_security_group.eks_cluster_sg.id, aws_security_group.eks_worker_node_sg.id]
   }
 
@@ -40,9 +40,9 @@ resource "aws_eks_node_group" "nodegroup_b" {
   node_group_name = "nodegroup_b"
   instance_types  = ["t2.micro"]
   ami_type        = "AL2_x86_64_GPU"
-  disk_size       = "12"
+  disk_size       = "20"
   node_role_arn   = aws_iam_role.eks_worker_node_role.arn
-  subnet_ids      = [aws_subnet.grad-private-1.id]
+  subnet_ids      = [aws_subnet.grad-private-2.id]
 
   scaling_config {
     desired_size = "2"
@@ -51,7 +51,7 @@ resource "aws_eks_node_group" "nodegroup_b" {
   }
 
   remote_access {
-    ec2_ssh_key               = "key_name"
+    ec2_ssh_key               = "re-cares"
     source_security_group_ids = [aws_security_group.eks_cluster_sg.id, aws_security_group.eks_worker_node_sg.id]
   }
 
