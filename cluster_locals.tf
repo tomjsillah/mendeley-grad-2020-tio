@@ -108,6 +108,7 @@ users:
       env:
       - name: AWS_PROFILE
         value: test
+        
 
 KUBECONFIG
 
