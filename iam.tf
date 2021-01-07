@@ -29,7 +29,7 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_AmazonEKSServicePolicy" {
 resource "aws_iam_role" "eks_worker_node_role" {
   name = "eks_cluster.worker_node_role"
 
-assume_role_policy = <<POLICY
+  assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
   "Statement": [

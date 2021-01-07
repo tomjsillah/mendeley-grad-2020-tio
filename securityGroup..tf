@@ -4,7 +4,7 @@ resource "aws_security_group" "grad20_SG" {
   vpc_id      = aws_vpc.Re-cares.id
 
   tags = {
-    "Name"        = "eks-cluster-sg-Re-cares-project-150331860"
+    "Name" = "eks-cluster-sg-Re-cares-project-150331860"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_security_group" "https_grad20_SG" {
   vpc_id      = aws_vpc.Re-cares.id
 
   tags = {
-    "Name"        = "eks-cluster-sg-Re-cares-project-150331860"
+    "Name" = "eks-cluster-sg-Re-cares-project-150331860"
   }
 }
 
@@ -33,5 +33,14 @@ resource "aws_security_group_rule" "allow_https_from_elsevier" {
   to_port           = 443
   protocol          = "tcp"
   cidr_blocks       = ["192.168.128.0/18"]
+  security_group_id = aws_security_group.https_grad20_SG.id
+}
+
+resource "aws_security_group_rule" "test-all-access" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = -1
+  cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.https_grad20_SG.id
 }

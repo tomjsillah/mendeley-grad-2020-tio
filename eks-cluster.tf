@@ -1,11 +1,11 @@
 resource "aws_eks_cluster" "eks_cluster" {
   name     = "eks_cluster"
   role_arn = aws_iam_role.user.arn
-vpc_config {
+  vpc_config {
     security_group_ids      = [aws_security_group.eks_cluster_sg.id]
     endpoint_private_access = false
     endpoint_public_access  = true
-    subnet_ids = [aws_subnet.grad-public-1.id, aws_subnet.grad-public-2.id, aws_subnet.grad-private-1.id, aws_subnet.grad-private-2.id]
+    subnet_ids              = [aws_subnet.grad-public-1.id, aws_subnet.grad-public-2.id, aws_subnet.grad-private-1.id, aws_subnet.grad-private-2.id]
   }
   depends_on = [
     aws_iam_role_policy_attachment.eks_cluster_AmazonEKSClusterPolicy,
