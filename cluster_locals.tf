@@ -85,7 +85,7 @@ apiVersion: v1
 clusters:
 - cluster:
     certificate-authority-data: ${aws_eks_cluster.eks_cluster.certificate_authority[0].data}
-    server: https://5898EDB64752DA44F4A9511E108EC7CD.gr7.us-east-2.eks.amazonaws.com
+    server: https://5898EDB64752DA44F4A9511E108EC7CD.gr7.eu-west-2.eks.amazonaws.com
   name: eks_cluster
 contexts:
 - context:

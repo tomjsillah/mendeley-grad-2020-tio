@@ -1,6 +1,6 @@
 ##aws as a provider
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-west-2"
 
 }
 
@@ -16,9 +16,9 @@ terraform {
 #cluster provider
 terraform {
   backend "s3" {
-    bucket  = "re-cares"
+    bucket  = "re-cares-backend"
     encrypt = true
-    region  = "us-east-2"
+    region  = "eu-west-2"
     key     = "re-cares/.tfstate"
   }
 }
