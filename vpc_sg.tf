@@ -13,7 +13,7 @@ resource "aws_security_group_rule" "allow_http_from_elsevier" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  cidr_blocks       = ["192.168.0.0/18"]
+  cidr_blocks       = module.common_values.common_relx_trusted_subnets
   security_group_id = aws_security_group.grad20_SG.id
 }
 
@@ -32,7 +32,7 @@ resource "aws_security_group_rule" "allow_https_from_elsevier" {
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  cidr_blocks       = ["192.168.128.0/18"]
+  cidr_blocks       = module.common_values.common_relx_trusted_subnets
   security_group_id = aws_security_group.https_grad20_SG.id
 }
 

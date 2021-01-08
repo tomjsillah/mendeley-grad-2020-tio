@@ -27,4 +27,8 @@ terraform {
 provider "kubernetes" {
 }
 
+module "common_values" {
+  source = "git::ssh://git@github.com/elsevier-centraltechnology/rp-terraform-common-values?ref=3.4.0"
+}
+
 
