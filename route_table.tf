@@ -31,14 +31,14 @@ resource "aws_route" "private_route_2" {
 #--------------------------------------------------------------
 # Associations between private subnets and route tables
 #--------------------------------------------------------------
-resource "aws_route_table_association" "private_rta" {
-  subnet_id      = aws_subnet.grad-private-1.id
-  route_table_id = aws_route_table.private_route_table.id
-}
-resource "aws_route_table_association" "private_rta_2" {
-  subnet_id      = aws_subnet.grad-private-2.id
-  route_table_id = aws_route_table.private_route_table_2.id
-}
+# resource "aws_route_table_association" "private_rta" {
+#   subnet_id      = aws_subnet.grad-private-1.id
+#   route_table_id = aws_route_table.private_route_table.id
+# }
+# resource "aws_route_table_association" "private_rta_2" {
+#   subnet_id      = aws_subnet.grad-private-2.id
+#   route_table_id = aws_route_table.private_route_table_2.id
+# }
 #--------------------------------------------------------------
 # Routing tables for public subnets
 #--------------------------------------------------------------
@@ -72,12 +72,12 @@ resource "aws_route" "public_route_2" {
 #--------------------------------------------------------------
 # Associations between public subnets and route tables
 #--------------------------------------------------------------
-resource "aws_route_table_association" "public_rta" {
-  subnet_id      = aws_subnet.grad-public-1.id
-  route_table_id = aws_route_table.public_route_table.id
-}
-resource "aws_route_table_association" "public_rta_2" {
-  subnet_id      = aws_subnet.grad-public-2.id
-  route_table_id = aws_route_table.public_route_table_2.id
-}
+# resource "aws_route_table_association" "public_rta" {
+#   subnet_id      = aws_subnet.grad-public-1.id
+#   route_table_id = aws_route_table.public_route_table.id
+# }
+# resource "aws_route_table_association" "public_rta_2" {
+#   subnet_id      = aws_subnet.grad-public-2.id
+#   route_table_id = aws_route_table.public_route_table_2.id
+# }
 

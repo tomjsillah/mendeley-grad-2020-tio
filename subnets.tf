@@ -1,7 +1,7 @@
 resource "aws_subnet" "grad-public-1" {
-  vpc_id            = aws_vpc.Re-cares.id
-  cidr_block        = "192.168.0.0/18"
-  availability_zone = "eu-west-2a"
+  vpc_id                  = aws_vpc.Re-cares.id
+  cidr_block              = "192.168.0.0/18"
+  availability_zone       = "eu-west-2a"
   map_public_ip_on_launch = true
   tags = {
     "Name"                              = "grad-public-1"
@@ -22,9 +22,9 @@ resource "aws_subnet" "grad-private-1" {
 }
 
 resource "aws_subnet" "grad-public-2" {
-  vpc_id            = aws_vpc.Re-cares.id
-  cidr_block        = "192.168.64.0/18"
-  availability_zone = "eu-west-2b"
+  vpc_id                  = aws_vpc.Re-cares.id
+  cidr_block              = "192.168.64.0/18"
+  availability_zone       = "eu-west-2b"
   map_public_ip_on_launch = true
   tags = {
     "Name"                              = "grad-public-2"

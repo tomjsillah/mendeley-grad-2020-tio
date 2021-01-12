@@ -6,8 +6,9 @@ resource "aws_db_instance" "ReCares" {
   storage_type            = "gp2"
   allocated_storage       = 20
   name                    = "ReCaresRDS"
+  identifier              = "re-cares-rds"
   username                = "admin"
-  password                = "Barath3on"
+  password                = "Elsevier125!"
   publicly_accessible     = "true"
   apply_immediately       = "true"
   backup_retention_period = 7
